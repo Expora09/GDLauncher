@@ -14,6 +14,7 @@ import {
   MICROSOFT_XSTS_AUTH_URL,
   MINECRAFT_SERVICES_URL,
   FTB_API_URL
+  MODRINTH_URL
 } from './utils/constants';
 import { sortByDate } from './utils';
 
@@ -212,17 +213,17 @@ export const getFabricJson = ([, version, loader]) => {
 // FORGE ADDONS
 
 export const getAddon = addonID => {
-  const url = `${FORGESVC_URL}/addon/${addonID}`;
+  const url = `${MODRINTH_URL}/mod/${id}`;
   return axios.get(url);
 };
 
 export const getMultipleAddons = async addons => {
-  const url = `${FORGESVC_URL}/addon`;
+  const url = `${MODRINTH_URL}/mod`;
   return axios.post(url, addons);
 };
 
 export const getAddonFiles = addonID => {
-  const url = `${FORGESVC_URL}/addon/${addonID}/files`;
+  const url = `${MODRINTH_URL}/mod/${addonID}/files`;
   return axios.get(url).then(res => ({
     ...res,
     data: res.data.sort(sortByDate)
@@ -230,22 +231,22 @@ export const getAddonFiles = addonID => {
 };
 
 export const getAddonDescription = addonID => {
-  const url = `${FORGESVC_URL}/addon/${addonID}/description`;
+  const url = `${MODRINTH_URL}/mod/${addonID}/description`;
   return axios.get(url);
 };
 
 export const getAddonFile = (addonID, fileID) => {
-  const url = `${FORGESVC_URL}/addon/${addonID}/file/${fileID}`;
+  const url = `${MODRINTH_URL}/mod/${addonID}/file/${fileID}`;
   return axios.get(url);
 };
 
 export const getAddonsByFingerprint = fingerprints => {
-  const url = `${FORGESVC_URL}/fingerprint`;
+  const url = `${MODRINTH_URL}/fingerprint`;
   return axios.post(url, fingerprints);
 };
 
 export const getAddonFileChangelog = (addonID, fileID) => {
-  const url = `${FORGESVC_URL}/addon/${addonID}/file/${fileID}/changelog`;
+  const url = `${MODRINTH_URL}/mod/${addonID}/file/${fileID}/changelog`;
   return axios.get(url);
 };
 
@@ -263,7 +264,7 @@ export const getSearch = (
   gameVersion,
   categoryId
 ) => {
-  const url = `${FORGESVC_URL}/addon/search`;
+  const url = `${MODRINTH_URL}/mod?limit=30&index=relevance&query=`;
   const params = {
     gameId: 432,
     sectionId: type === 'mods' ? 6 : 4471,

@@ -9,10 +9,12 @@ export const JAVA_MANIFEST_URL = 'https://cdn.assets-gdevs.com/openjdk8.json';
 export const MAVEN_REPO = 'http://central.maven.org/maven2';
 export const MC_LIBRARIES_URL = 'https://libraries.minecraft.net';
 export const FORGESVC_URL = 'https://addons-ecs.forgesvc.net/api/v2';
+export const MODRINTH_URL = https://api.modrinth.com/api/v1/
 export const FTB_API_URL = 'https://api.modpacks.ch/public';
 export const FTB_MODPACK_URL = 'https://feed-the-beast.com/modpack';
 export const FORGESVC_CATEGORIES =
   'https://addons-ecs.forgesvc.net/api/v2/category?gameId=432';
+export const MODRINTH_CATEGORIES = 
 export const NEWS_URL =
   'https://www.minecraft.net/en-us/feeds/community-content/rss';
 export const FMLLIBS_OUR_BASE_URL = 'https://fmllibs.gdevs.io';
@@ -24,6 +26,7 @@ export const FORGE = 'forge';
 export const VANILLA = 'vanilla';
 
 export const CURSEFORGE = 'curseforge';
+export const MODRINTH 
 export const FTB = 'ftb';
 
 export const ACCOUNT_MOJANG = 'ACCOUNT_MOJANG';
